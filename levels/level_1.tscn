@@ -1,0 +1,219 @@
+[gd_scene load_steps=12 format=3 uid="uid://cpy14qmppc8xb"]
+
+[ext_resource type="Script" path="res://StartGame/StartGame.gd" id="1_n7wt4"]
+[ext_resource type="PackedScene" uid="uid://boxye5m1nb4w6" path="res://StartGame/BG.tscn" id="2_8nklu"]
+[ext_resource type="FontFile" uid="uid://7uav15qfnban" path="res://StartGame/Templates + Misc/ThaleahFat/ThaleahFat.ttf" id="3_84qrv"]
+[ext_resource type="Texture2D" uid="uid://dh02x61uhx770" path="res://StartGame/Templates + Misc/RightArrow.png" id="4_1a818"]
+[ext_resource type="Texture2D" uid="uid://bosvfg47ctwew" path="res://StartGame/Templates + Misc/LeftArrow.png" id="5_htomj"]
+[ext_resource type="PackedScene" uid="uid://nmsa1iw14xq6" path="res://tilemaps/all_tilemap.tscn" id="6_7ap1f"]
+[ext_resource type="PackedScene" uid="uid://dsyqubot4iron" path="res://scenes/player.tscn" id="11_cgfcq"]
+[ext_resource type="PackedScene" uid="uid://un0j7l2upmv2" path="res://tilemaps/hazard_tiles.tscn" id="12_klcjb"]
+[ext_resource type="PackedScene" uid="uid://be6nts5w4barw" path="res://scenes/death_player.tscn" id="13_yy3yi"]
+[ext_resource type="PackedScene" uid="uid://lb4ug62creoj" path="res://scenes/endpoint.tscn" id="14_kyk1b"]
+[ext_resource type="PackedScene" uid="uid://ng4s4bla3o1" path="res://scenes/spawnpoint.tscn" id="15_5xyfi"]
+
+[node name="StartGame" type="Node2D"]
+position = Vector2(226.776, 248)
+script = ExtResource("1_n7wt4")
+
+[node name="BG" parent="." instance=ExtResource("2_8nklu")]
+
+[node name="Main Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Main Menu" groups=["Menu"]]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.4556
+anchor_top = -0.825
+anchor_right = 11.5556
+anchor_bottom = 0.3
+offset_left = -81.0
+offset_top = -111.0
+offset_right = 322.0
+offset_bottom = -64.0
+theme_override_colors/font_color = Color(0, 0.545098, 0, 1)
+theme_override_fonts/font = ExtResource("3_84qrv")
+theme_override_font_sizes/font_size = 100
+text = "SLIGGY'S ADVENTURE"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Main Menu" groups=["Menu"]]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6556
+anchor_top = -0.45
+anchor_right = 10.7556
+anchor_bottom = 0.675
+offset_left = -53.0
+offset_top = -120.0
+offset_right = 350.0
+offset_bottom = -73.0
+theme_override_colors/font_color = Color(0, 0.882353, 0, 1)
+theme_override_fonts/font = ExtResource("3_84qrv")
+theme_override_font_sizes/font_size = 100
+text = "SLIGGY'S ADVENTURE"
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Main Menu" groups=["Menu"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 8.975
+anchor_top = 5.9
+anchor_right = 8.975
+anchor_bottom = 5.9
+offset_left = -250.0
+offset_top = -388.0
+offset_right = 234.0
+offset_bottom = -44.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Menu/MarginContainer" groups=["Menu"]]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Play" type="Button" parent="Main Menu/MarginContainer/VBoxContainer" groups=["Menu"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_84qrv")
+theme_override_font_sizes/font_size = 40
+text = "Play"
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[node name="Quit" type="Button" parent="Main Menu/MarginContainer/VBoxContainer" groups=["Menu"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_84qrv")
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[node name="Instructions 1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Move" type="Node" parent="Instructions 1"]
+
+[node name="RightArrow" type="Sprite2D" parent="Instructions 1/Move"]
+z_index = -1
+position = Vector2(83, 480)
+scale = Vector2(0.0878927, 0.0908291)
+skew = 0.0349066
+texture = ExtResource("4_1a818")
+
+[node name="LeftArrow" type="Sprite2D" parent="Instructions 1/Move"]
+z_index = -1
+position = Vector2(51, 480)
+scale = Vector2(0.0854925, 0.0877512)
+skew = 0.0349066
+texture = ExtResource("5_htomj")
+
+[node name="MoveTextBack" type="Label" parent="Instructions 1/Move"]
+offset_left = 107.776
+offset_top = 460.0
+offset_right = 270.776
+offset_bottom = 507.0
+theme_override_colors/font_color = Color(0, 0.572549, 0.247059, 1)
+theme_override_fonts/font = ExtResource("3_84qrv")
+theme_override_font_sizes/font_size = 40
+text = "To Move"
+
+[node name="MoveText" type="Label" parent="Instructions 1/Move"]
+offset_left = 103.776
+offset_top = 463.0
+offset_right = 266.776
+offset_bottom = 510.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_84qrv")
+theme_override_font_sizes/font_size = 40
+text = "To Move"
+
+[node name="Jump" type="Node" parent="Instructions 1"]
+
+[node name="JumpTextBack" type="Label" parent="Instructions 1/Jump"]
+offset_left = 296.0
+offset_top = 322.0
+offset_right = 566.0
+offset_bottom = 359.0
+theme_override_colors/font_color = Color(0, 0.572549, 0.247059, 1)
+theme_override_fonts/font = ExtResource("3_84qrv")
+theme_override_font_sizes/font_size = 40
+text = "[Space] To Jump"
+
+[node name="JumpText" type="Label" parent="Instructions 1/Jump"]
+offset_left = 293.0
+offset_top = 324.0
+offset_right = 563.0
+offset_bottom = 361.0
+theme_override_fonts/font = ExtResource("3_84qrv")
+theme_override_font_sizes/font_size = 40
+text = "[Space] To Jump"
+
+[node name="Death" type="Node" parent="Instructions 1"]
+
+[node name="DeathTextBack" type="Label" parent="Instructions 1/Death"]
+offset_left = 627.0
+offset_top = 236.0
+offset_right = 767.0
+offset_bottom = 283.0
+theme_override_colors/font_color = Color(0, 0.572549, 0.247059, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_84qrv")
+theme_override_font_sizes/font_size = 40
+text = "Death.."
+
+[node name="DeathText" type="Label" parent="Instructions 1/Death"]
+offset_left = 624.0
+offset_top = 239.0
+offset_right = 738.0
+offset_bottom = 276.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_84qrv")
+theme_override_font_sizes/font_size = 40
+text = "Death.."
+
+[node name="Tilemap" parent="." instance=ExtResource("6_7ap1f")]
+
+[node name="player" parent="." instance=ExtResource("11_cgfcq")]
+position = Vector2(-176.776, 304)
+
+[node name="Camera2D" parent="player" index="2"]
+position = Vector2(-14.985, 7.924)
+enabled = false
+zoom = Vector2(1, 1)
+
+[node name="level_tiles" parent="." instance=ExtResource("12_klcjb")]
+z_index = -1
+position = Vector2(862.224, 526)
+scale = Vector2(2, 2)
+layer_0/tile_data = PackedInt32Array(-327686, 196609, 14, -327685, 196609, 14, -327684, 196609, 14, -327683, 196609, 14, -327682, 196609, 14, -327681, 196609, 14, -393216, 196609, 14, -393215, 196609, 14)
+layer_1/name = "WaterHazard"
+layer_1/tile_data = PackedInt32Array(-393231, 196609, 14, -393230, 262145, 14, -393229, 196609, 14, -720898, 262146, 17, -655362, 262146, 18, -589826, 262146, 19, -524290, 262146, 20, -720897, 327682, 17, -655361, 327682, 18, -589825, 327682, 19, -524289, 327682, 20, -458754, 262146, 17, -393218, 458754, 18, -327682, 458754, 19, -262146, 458754, 20, -458753, 327682, 17, -393217, 524290, 18, -327681, 524290, 19, -262145, 524290, 20, -393223, 393218, 18, -327687, 393218, 19, -262151, 393218, 20, -393222, 458754, 18, -327686, 458754, 19, -262150, 458754, 20, -393221, 524290, 18, -327685, 524290, 19, -262149, 524290, 20, -393220, 589826, 18, -327684, 589826, 19, -262148, 589826, 20, -393219, 393218, 18, -327683, 393218, 19, -262147, 393218, 20, -458752, 589826, 18, -393216, 589826, 19, -327680, 589826, 20, -458751, 393218, 18, -393215, 393218, 19, -327679, 393218, 20, -196611, 458754, 20, -196610, 524290, 20, -196609, 458754, 20, -262144, 458754, 20, -262143, 524290, 20, -196616, 458754, 20, -196615, 524290, 20, -196614, 458754, 20, -196613, 458754, 20, -196612, 524290, 20)
+
+[node name="death_player" parent="." instance=ExtResource("13_yy3yi")]
+position = Vector2(-522.776, 230)
+
+[node name="endpoint" parent="." instance=ExtResource("14_kyk1b")]
+position = Vector2(914.224, 229)
+
+[node name="spawnpoint" parent="." instance=ExtResource("15_5xyfi")]
+position = Vector2(-176.776, 304)
+
+[connection signal="pressed" from="Main Menu/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Main Menu/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+
+[editable path="player"]

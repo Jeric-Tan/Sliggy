@@ -1,0 +1,30 @@
+[gd_scene load_steps=9 format=3 uid="uid://ctsxqifl3ubd4"]
+
+[ext_resource type="PackedScene" uid="uid://dobsobymusda1" path="res://scenes/level_background.tscn" id="1_35act"]
+[ext_resource type="PackedScene" uid="uid://un0j7l2upmv2" path="res://tilemaps/hazard_tiles.tscn" id="2_p4h6l"]
+[ext_resource type="PackedScene" uid="uid://dsyqubot4iron" path="res://scenes/player.tscn" id="3_0wt6r"]
+[ext_resource type="PackedScene" uid="uid://nmsa1iw14xq6" path="res://tilemaps/all_tilemap.tscn" id="3_t8yer"]
+[ext_resource type="PackedScene" uid="uid://be6nts5w4barw" path="res://scenes/death_player.tscn" id="4_h863s"]
+[ext_resource type="PackedScene" uid="uid://lb4ug62creoj" path="res://scenes/endpoint.tscn" id="5_svy7r"]
+[ext_resource type="PackedScene" uid="uid://ng4s4bla3o1" path="res://scenes/spawnpoint.tscn" id="6_dwqjy"]
+[ext_resource type="PackedScene" uid="uid://dvufa7xvj2jth" path="res://scenes/checkpoint.tscn" id="7_bqi7m"]
+
+[node name="level_holder" type="Node"]
+
+[node name="level_background" parent="." instance=ExtResource("1_35act")]
+
+[node name="hazard_tiles" parent="." instance=ExtResource("2_p4h6l")]
+
+[node name="all_tilemap" parent="." instance=ExtResource("3_t8yer")]
+
+[node name="player" parent="." instance=ExtResource("3_0wt6r")]
+position = Vector2(55, 445)
+
+[node name="death_player" parent="." instance=ExtResource("4_h863s")]
+
+[node name="endpoint" parent="." instance=ExtResource("5_svy7r")]
+
+[node name="spawnpoint" parent="." instance=ExtResource("6_dwqjy")]
+position = Vector2(30, 500)
+
+[node name="checkpoint" parent="." instance=ExtResource("7_bqi7m")]
