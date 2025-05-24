@@ -7,6 +7,6 @@ Includes a boss battle at the end as well as keeping track of the highscore (fas
 
 Play the game [HERE](https://kzfsg.itch.io/sliggy-the-slime)!
 
-
+<br />
 *Did not use much of git that time, commit history is limited*
 
